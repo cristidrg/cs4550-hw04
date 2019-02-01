@@ -1,9 +1,100 @@
 /* This file is for your main application css. */
 
-@import "~milligram/dist/milligram";
-
-.column > p {
-    padding-top: 10ex;
-    text-align: center;
+body {
+  background: #00c6ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #00c6ff, #0072ff); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #00c6ff, #0072ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game {
+    display: flex;
+    width: 550px;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.game__title {
+    text-transform: uppercase;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.game__board {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    width: 500px;
+    background-image: linear-gradient(45deg, #DFE1E6 0%, #F2F3F7 100%);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 1px 1px 5px 2px #ebecf0;
+}
+
+.game__tile {
+    height: 85px;
+    width: 50px;
+    flex: 1 0 21%;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+    border-radius: 5px;
+    box-shadow: 8px 8px 8px -4px #C8CCD4;
+    cursor: pointer;
+    background-color: white;
+}
+
+.game__tile--matched {
+    background-color: green;
+    opacity: 0;
+}
+
+.game__tile--show {
+    border-color: black;
+}
+
+.game__tile--error {
+    background: #ff2f2f; 
+    color: white;
+}
+
+.game__options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin-top: 30px;
+
+}
+
+.game__reset {
+    font-size: 20px;
+    background: none;
+    border: none;
+    text-transform: uppercase;
+    background-color: #ff8400;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.game__score {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+}
