@@ -13,7 +13,6 @@ class Starter extends Component {
   state = generateNewStartingState();
 
   componentDidUpdate = (prevProps, prevState) => {
-    console.log(this.state)
     const {step, choice, tileState} = this.state;
     
     if (step == steps.MISS) {
@@ -108,7 +107,7 @@ class Starter extends Component {
 
     return (
       <div key={id} className={style}
-      onClick={matched || !hidden ? '': this.onTileClick(id, content)}>
+      onClick={matched || !hidden ? () => 0: this.onTileClick(id, content)}>
         {hidden ? '' : content}
       </div>
     );
